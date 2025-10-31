@@ -35,7 +35,7 @@ docker run -p 18080:18080 kvstore:02
 
 ## دستورات PowerShell
 ```powershell
-cd C:\Users\pmiyo\Desktop\Excercise\02
+cd path\to\your\project
 docker build -t my-kvstore:latest .
 docker run -d --name kv -p 18080:18080 -v kv_data:/app/data my-kvstore:latest
 docker ps
@@ -78,6 +78,15 @@ Invoke-RestMethod -Method Get -Uri "http://localhost:18080/objects/user:2003"
 name          age  email
 ----          ---  -----
 Ali Mohammadi 41   a.mohammadi@example.com
+
+name        age email
+----        --- -----
+Reza Karimi  35 r.karimi@example.com
+
+name        age email
+----        --- -----
+Reza Karimi  35 r.karimi@example.com
+
 ```
 
 ---
@@ -115,7 +124,7 @@ Invoke-RestMethod -Method Get -Uri "http://localhost:18080/objects/user:2003"
 
 ---
 
-## حذف کامل داده‌ها
+## حذف کامل Volume
 ```bash
 docker volume rm kv_data
 ```
